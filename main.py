@@ -1,4 +1,5 @@
 import random
+import time
 from PIL import Image, ImageDraw, ImageFont
 import textwrap
 
@@ -32,17 +33,17 @@ def pick_random_words(parts_dict, parts):
 
 def generate_img(sentence_str: str):
 
-    para = textwrap.wrap(sentence_str, width=25)
-    base_height = base_heights[len(para)]
-    padding = 18
-
     base_heights = {1 : 220,
                     2 : 190,
                     3 : 155,
                     4 : 125,
                     5 : 90}
 
+    para = textwrap.wrap(sentence_str, width=25)
+    base_height = base_heights[len(para)]
+    padding = 18
     width, height = 500, 500
+
     img = Image.new('RGB', (width, height), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype(font_path, 38)
@@ -55,7 +56,7 @@ def generate_img(sentence_str: str):
 
     img.save('test.png')
 
-
 parts_dict = dict_generator(parts)
+
 sentence_str = pick_random_words(parts_dict, parts)
 generate_img(sentence_str)
