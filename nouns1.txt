@@ -1,0 +1,11 @@
+fungibility
+platform
+portal
+blockchain
+sidechain
+immutability
+smart-contract
+interledger
+inter
+transaction
+transaction output

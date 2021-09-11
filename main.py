@@ -4,7 +4,9 @@ from PIL import Image, ImageDraw, ImageFont
 import textwrap
 
 parts_dict = {}
-parts = ['adverbs', 'verbs', 'adjectives', 'nouns']
+# parts = ['adverbs', 'verbs', 'adjectives', 'nouns']
+# parts = ['verbs', 'adjectives', 'nouns']
+parts = ['adjectives1', 'adjectives2', 'nouns1']
 font_path = '/Library/Fonts/Assistant-VariableFont_wght.ttf'
 weight = [b'ExtraLight', b'Light', b'Regular', b'SemiBold', b'Bold', b'ExtraBold']
 
@@ -31,7 +33,8 @@ def pick_random_words(parts_dict, parts):
     return sentence_str
 
 
-def generate_img(sentence_str: str):
+def generate_img(sentence_str: str, session_id):
+
 
     base_heights = {1 : 220,
                     2 : 190,
@@ -54,9 +57,34 @@ def generate_img(sentence_str: str):
         draw.text(((width - w) / 2, base_height), line, font=font)
         base_height += h + padding
 
-    img.save('test.png')
+    file_type = '.png'
+    filename = f'{session_id}.{file_type}'
+
+    img.save(filename)
+
+    return filename
+
+def upload_image(filename):
+
+    return url
+
+session_id = '32'
 
 parts_dict = dict_generator(parts)
-
 sentence_str = pick_random_words(parts_dict, parts)
-generate_img(sentence_str)
+filename = generate_img(sentence_str, session_id)
+
+
+# url = upload_image(filename)
+
+# @app.get('/')
+# async def main(adverb    : str,
+#                verb      : str,
+#                adjective : str,
+#                noun      : str):
+#
+#
+#     url =
+#
+#
+# return f'<img href={url} img>'

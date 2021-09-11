@@ -1,0 +1,13 @@
+unspent
+escrow
+atomic-swap
+non-fungible
+standardised
+monopolistic
+fragmented
+sharded
+private
+decoupled
+deterministic
+technology-agnostic
+hash-time-lock

@@ -1,0 +1,11 @@
+decentralised
+standardised
+autonomous
+byzantine-fault-tolerant
+authorised
+hash-time-lock
+mapped
+operational
+isolated
+proof-of-work
+proof-of-stake
